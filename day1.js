@@ -41,8 +41,12 @@ fs.readFile('day1.txt', 'utf8', (err, data) => {
   if (err) {
     throw err
   }
+
   const numbers = getNumbersFromString(data)
-  const jump = numbers.length / 2
+  // Part 1
+  let jump = 1
+  // Part 2
+  jump = numbers.length / 2
   const repeatedNumbers = numbers.filter(isRepeated.bind(null, jump))
   const result = sumArrayNumbers(repeatedNumbers)
 
